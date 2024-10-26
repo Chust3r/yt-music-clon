@@ -23,7 +23,7 @@ function Layout({ children }: Props) {
 		<html lang='en'>
 			<body
 				className={cn(
-					'antialiased',
+					'antialiased layout',
 					geistSans.variable,
 					geistMono.variable
 				)}
