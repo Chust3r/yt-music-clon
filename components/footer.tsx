@@ -1,6 +1,6 @@
 export function Footer() {
 	return (
-		<footer className='w-full min-h-20 grid place-content-center'>
+		<footer className='w-full min-h-20 grid place-content-center border'>
 			FOOTER
 		</footer>
 	)

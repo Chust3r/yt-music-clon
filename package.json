@@ -11,6 +11,7 @@
   "dependencies": {
     "@nanostores/react": "^0.8.0",
     "clsx": "^2.1.1",
+    "framer-motion": "^11.11.10",
     "nanostores": "^0.11.3",
     "next": "15.0.1",
     "react": "19.0.0-rc-69d4b800-20241021",
