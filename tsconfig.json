@@ -21,11 +21,13 @@
 		"paths": {
 			"~/*": ["./*"],
 			"~actions/*": ["./actions/*"],
+			"~components": ["./components/index.ts"],
 			"~components/*": ["./components/*"],
-			"~ui/*": ["./components/ui/*"],
+			"~ui": ["./components/ui/index.ts"],
+			"~icons": ["./components/icons/index.ts"],
 			"~lib/*": ["./lib/*"],
 			"~hooks/*": ["./hooks/*"],
-			"~stores/*":["./stores/*"]
+			"~stores/*": ["./stores/*"]
 		}
 	},
 	"include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
