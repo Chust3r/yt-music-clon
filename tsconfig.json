@@ -24,7 +24,7 @@
 			"~components": ["./components/index.ts"],
 			"~components/*": ["./components/*"],
 			"~ui": ["./components/ui/index.ts"],
-			"~icons": ["./components/icons/index.ts"],
+			"~icons": ["./components/icons.tsx"],
 			"~lib/*": ["./lib/*"],
 			"~hooks/*": ["./hooks/*"],
 			"~stores/*": ["./stores/*"]

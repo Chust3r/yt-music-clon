@@ -1,5 +1,5 @@
 export function Header() {
 	return (
-		<header className='w-full h-12 grid place-content-center border'>HEADER</header>
+		<header className='w-full h-16 grid place-content-center border-b border-neutral-800'>HEADER</header>
 	)
 }
