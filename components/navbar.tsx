@@ -1,13 +1,26 @@
 'use client'
 import { usePathname } from 'next/navigation'
 import { cn } from '~lib/utils'
-import { type IconProps, Compass, Home, LibraryMusic, YTMusic } from '~icons'
+import {
+	type IconProps,
+	HomeInactive,
+	HomeActive,
+	ExploreActive,
+	ExploreInactive,
+	LibraryMusiActive,
+	LibraryMusicInactive,
+	YTMusic,
+} from '~icons'
+import Link from 'next/link'
 
 interface Item {
 	id: number
 	label: string
 	path: string
-	icon: React.ElementType<IconProps>
+	icons: {
+		active: React.ElementType<IconProps>
+		inactive: React.ElementType<IconProps>
+	}
 }
 
 const items: Item[] = [
@@ -15,25 +28,37 @@ const items: Item[] = [
 		id: 1,
 		label: 'Principal',
 		path: '/',
-		icon: Home,
+		icons: {
+			active: HomeActive,
+			inactive: HomeInactive,
+		},
 	},
 	{
 		id: 2,
 		label: 'Explorar',
 		path: '/explore',
-		icon: Compass,
+		icons: {
+			active: ExploreActive,
+			inactive: ExploreInactive,
+		},
 	},
 	{
 		id: 3,
 		label: 'Biblioteca',
 		path: '/library',
-		icon: LibraryMusic,
+		icons: {
+			active: LibraryMusiActive,
+			inactive: LibraryMusicInactive,
+		},
 	},
 	{
 		id: 4,
 		label: 'Actualizar',
 		path: '/music_premium',
-		icon: YTMusic,
+		icons: {
+			active: YTMusic,
+			inactive: YTMusic,
+		},
 	},
 ]
 
@@ -48,24 +73,26 @@ export function NavBar() {
 						const isActive = pathname === item.path
 
 						return (
-							<button
-								key={item.id}
-								type='button'
-								className={cn(
-									'flex gap-4 items-center px-3 py-2 rounded-lg w-full',
-									isActive
-										? 'bg-neutral-900/50'
-										: 'hover:bg-neutral-800/50'
-								)}
-							>
-								<item.icon
+							<Link href={item.path} key={item.id}>
+								<button
+									type='button'
 									className={cn(
-										'size-6 aspect-square',
-										isActive && 'fill-white stroke-none'
+										'flex gap-4 items-center px-3 py-3 rounded-lg w-full',
+										isActive
+											? 'bg-neutral-900/50'
+											: 'hover:bg-neutral-800/50'
 									)}
-								/>
-								<span>{item.label}</span>
-							</button>
+								>
+									{isActive ? (
+										<item.icons.active className='size-6' />
+									) : (
+										<item.icons.inactive className='size-6' />
+									)}
+									<span className={cn(isActive && 'font-medium')}>
+										{item.label}
+									</span>
+								</button>
+							</Link>
 						)
 					})}
 				</div>
